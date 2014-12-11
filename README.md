@@ -1,5 +1,10 @@
 # address-rfc2822
 
+[![Build
+Status](https://travis-ci.org/haraka/node-address-rfc2821.svg?branch=master)](https://travis-ci.org/haraka/node-address-rfc2821)
+[![Coverage
+Status](https://coveralls.io/repos/haraka/node-address-rfc2821/badge.png)](https://coveralls.io/r/haraka/node-address-rfc2821)
+
 
 Parser for RFC2821 (Envelope) format email addresses.
 
