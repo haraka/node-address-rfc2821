@@ -1,0 +1,26 @@
+{
+  "name": "address-rfc2821",
+  "version": "0.0.1",
+  "description": "RFC 2821 (Envelope) email address parser",
+  "main": "index.js",
+  "homepage": "https://github.com/haraka/node-address-rfc2821",
+  "keywords": [
+    "email",
+    "address",
+    "rfc821",
+    "rfc2821",
+    "mail",
+    "from"
+  ],
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/haraka/node-address-rfc2821.git"
+  },
+  "devDependencies": {
+    "mocha": "^2.0.1"
+  },
+  "license": "MIT"
+}
