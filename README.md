@@ -1,4 +1,4 @@
-# address-rfc2822
+# address-rfc2821
 
 [![Build
 Status](https://travis-ci.org/haraka/node-address-rfc2821.svg?branch=master)](https://travis-ci.org/haraka/node-address-rfc2821)
