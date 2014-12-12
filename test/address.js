@@ -50,14 +50,14 @@ describe('bad addresses fail', function () {
     
     it('<user@example.com#>', function () {
         assert.throws(function () {
-            new Address('<user@example.com#>')
-        })
+            new Address('<user@example.com#>');
+        });
     });
     
     it('<user@example.com>.', function () {
         assert.throws(function () {
-            new Address('<user@example.com.>')
-        })
+            new Address('<user@example.com.>');
+        });
     });
 });
 
@@ -68,17 +68,14 @@ describe('compile_re', function () {
         addr.compile_re();
         assert.ok(addr);
     });
-};
+});
 
 describe('isNull', function () {
-    'positive <>': function (test) {
-        test.expect(1);
-        test.ok(new Address('<>').isNull());
-        test.done();
-    },
-    'negative': function (test) {
-        test.expect(1);
-        test.ok(!new Address('<matt@example.com>').isNull());
-        test.done();
-    },    
+    it('positive <>', function () {
+        assert.ok(new Address('<>').isNull());
+    });
+    
+    it('negative', function () {
+        assert.ok(!new Address('<matt@example.com>').isNull());
+    });
 });
