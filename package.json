@@ -6,6 +6,7 @@
   "homepage": "https://github.com/haraka/node-address-rfc2821",
   "keywords": [
     "email",
+    "envelope",
     "address",
     "rfc821",
     "rfc2821",
