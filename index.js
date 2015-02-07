@@ -1,6 +1,8 @@
 'use strict';
 // a class encapsulating an email address per RFC-2821
 
+if (process.env.COVERAGE) require('blanket');
+
 var qchar = /([^a-zA-Z0-9!#\$\%\&\x27\*\+\x2D\/=\?\^_`{\|}~.])/;
 
 function Address (user, host) {
@@ -77,16 +79,16 @@ Address.prototype.parse = function (addr) {
         return;
     }
 
-    // bare postmaster is permissible, perl RFC-2821 (4.5.1)
+    // bare postmaster is permissible: RFC-2821 (4.5.1)
     if (addr.toLowerCase() === 'postmaster') {
         this.user = 'postmaster';
         this.host = null;
         return;
     }
 
-    var matches;
+    var matches = user_host_re.exec(addr);
     
-    if (!(matches = user_host_re.exec(addr))) {
+    if (!matches) {
         throw new Error('Invalid domain in address: ' + addr);
     }
     
