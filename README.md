@@ -20,10 +20,9 @@ Installation
 Usage
 -----
 
-    var addrparser = require('address-rfc2821');
+    var Address = require('address-rfc2821').Address;
 
-    var addresses = addrparser.parse("Matt Simerson <matt@tnpi.net>");
-    var address = addresses[0];
+    var parsed = new Address('<user@example.com>');
 
 
 License
