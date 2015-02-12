@@ -36,5 +36,5 @@ This module is MIT licensed.
 [dep-url]: https://david-dm.org/haraka/node-address-rfc2821
 [cov-img]: https://coveralls.io/repos/haraka/node-address-rfc2821/badge.png
 [cov-url]: https://coveralls.io/r/haraka/node-address-rfc2821
-[win-ci-img]: https://ci.appveyor.com/api/projects/status/uhej33x4x1tcd79r?svg=true
-[win-ci-url]: https://ci.appveyor.com/project/msimerson/node-address-rfc2821
+[win-ci-img]: https://ci.appveyor.com/api/projects/status/ai1jt6yrphrehpg9?svg=true
+[win-ci-url]: https://ci.appveyor.com/project/msimerson/node-address-rfc2821-1wf12/branch/master
