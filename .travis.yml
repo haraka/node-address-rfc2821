@@ -5,5 +5,12 @@ node_js:
     - "0.8"
     - "0.6"
     - iojs
+
+before_install:
+    - npm install blanket
+    - npm install coveralls
+    - npm install mocha-lcov-reporter
+    - npm install grunt-coveralls
+
 after_script:
     - npm run coveralls

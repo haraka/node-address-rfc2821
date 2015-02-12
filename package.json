@@ -34,16 +34,12 @@
     "url": "https://github.com/haraka/node-address-rfc2821.git"
   },
   "devDependencies": {
-    "blanket": "^1.1.6",
-    "coveralls": "^2.11.2",
     "grunt": "^0.4.5",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-jshint": "^0.11.0",
-    "grunt-coveralls": "^1.0.0",
     "grunt-mocha-test": "^0.12.7",
     "jshint": "^2.6.0",
-    "mocha": "^2.1.0",
-    "mocha-lcov-reporter": "0.0.1"
+    "mocha": "^2.1.0"
   },
   "license": "MIT"
 }
