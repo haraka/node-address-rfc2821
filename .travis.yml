@@ -7,10 +7,10 @@ node_js:
     - iojs
 
 before_install:
+
+after_script:
     - npm install blanket
     - npm install coveralls
     - npm install mocha-lcov-reporter
     - npm install grunt-coveralls
-
-after_script:
     - npm run coveralls
