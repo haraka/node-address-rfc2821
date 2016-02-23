@@ -1,6 +1,6 @@
 {
   "name": "address-rfc2821",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "RFC 2821 (Envelope) email address parser",
   "author": {
     "name": "The Haraka Team",
@@ -20,26 +20,19 @@
   "bugs": {
     "url": "https://github.com/haraka/node-address-rfc2821/issues"
   },
-  "config": {
-    "blanket": {
-      "pattern": "index.js"
-    }
-  },
   "scripts": {
-    "test": "./node_modules/.bin/mocha",
-    "coveralls": "COVERAGE=1 ./node_modules/.bin/mocha --require blanket --reporter mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js"
+    "test": "./node_modules/.bin/mocha"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/haraka/node-address-rfc2821.git"
   },
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-jshint": "^0.11.0",
-    "grunt-mocha-test": "^0.12.7",
-    "jshint": "^2.6.0",
-    "mocha": "^2.1.0"
+    "grunt": "*",
+    "grunt-eslint": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-mocha-test": "*",
+    "mocha": "*"
   },
   "license": "MIT"
 }
