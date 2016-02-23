@@ -16,7 +16,7 @@ portions immediately following the SMTP verbs `MAIL FROM:` and `RCPT TO:`. RFC 2
 <to@sender.com>
 ````
 
-To parse email addresses contained in the message headers (To: From: BCC, CC), look instead at an RFC 2822/5322 parser such as [email-addresses](https://www.npmjs.com/package/email-addresses).
+To parse email addresses contained in the message headers (To: From: BCC, CC), look instead at an RFC 2822/5322 parser such as [address-rfc2822](https://www.npmjs.com/package/address-rfc2822) or [email-addresses](https://www.npmjs.com/package/email-addresses).
 
 
 Installation
