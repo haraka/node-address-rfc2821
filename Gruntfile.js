@@ -28,5 +28,6 @@ module.exports = function(grunt) {
         },
     });
 
+    grunt.registerTask('lint', ['eslint']);
     grunt.registerTask('default', ['eslint','mochaTest']);
 };
