@@ -13,11 +13,11 @@ function _check(address, user, host) {
 describe('good addresses pass', function () {
 
     it('<>', function () {
-        _check('<>', null, null);
+        _check('<>', '', '');
     });
 
     it('<postmaster>', function () {
-        _check('<postmaster>', 'postmaster', null);
+        _check('<postmaster>', 'postmaster', '');
     });
 
     it('<foo@example.com>', function () {
