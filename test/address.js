@@ -79,3 +79,19 @@ describe('isNull', function () {
         assert.ok(!new Address('<matt@example.com>').isNull());
     });
 });
+
+describe('format()', function () {
+    it('works', function (done) {
+        var addr = new Address('<matt@example.com>');
+        assert.equal(addr.user, 'matt');
+        assert.equal(addr.host, 'example.com');
+        assert.equal(addr.format(), '<matt@example.com>');
+        done();
+    });
+
+    it('lower cases hostnames', function (done) {
+        var addr = new Address('<matt@exAMple.com>');
+        assert.equal(addr.host, 'example.com');
+        done();
+    });
+});
