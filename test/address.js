@@ -13,11 +13,11 @@ function _check(address, user, host) {
 describe('good addresses pass', function () {
 
     it('<>', function () {
-        _check('<>', null, null);
+        _check('<>', '', '');
     });
 
     it('<postmaster>', function () {
-        _check('<postmaster>', 'postmaster', null);
+        _check('<postmaster>', 'postmaster', '');
     });
 
     it('<foo@example.com>', function () {
@@ -77,5 +77,21 @@ describe('isNull', function () {
 
     it('negative', function () {
         assert.ok(!new Address('<matt@example.com>').isNull());
+    });
+});
+
+describe('format()', function () {
+    it('works', function (done) {
+        var addr = new Address('<matt@example.com>');
+        assert.equal(addr.user, 'matt');
+        assert.equal(addr.host, 'example.com');
+        assert.equal(addr.format(), '<matt@example.com>');
+        done();
+    });
+
+    it('lower cases hostnames', function (done) {
+        var addr = new Address('<matt@exAMple.com>');
+        assert.equal(addr.host, 'example.com');
+        done();
     });
 });

@@ -76,15 +76,15 @@ Address.prototype.parse = function (addr) {
 
     // empty addr is ok
     if (addr === '') {
-        this.user = null;
-        this.host = null;
+        this.user = '';
+        this.host = '';
         return;
     }
 
     // bare postmaster is permissible: RFC-2821 (4.5.1)
     if (addr.toLowerCase() === 'postmaster') {
         this.user = 'postmaster';
-        this.host = null;
+        this.host = '';
         return;
     }
 
