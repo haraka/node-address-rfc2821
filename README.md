@@ -5,6 +5,8 @@
 
 # address-rfc2821
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/haraka/node-address-rfc2821.svg)](https://greenkeeper.io/)
+
 Parser for RFC2821 (Envelope) format email addresses.
 
 This module parses RFC2821 email address from the SMTP envelope. These are the
