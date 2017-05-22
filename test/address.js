@@ -4,10 +4,13 @@ var assert = require('assert');
 
 var Address = require('../index').Address;
 
-function _check(address, user, host) {
+function _check(address, user, host, original_host) {
     var a = new Address(address);
     assert.equal(a.user, user);
     assert.equal(a.host, host);
+    if (original_host) {
+        assert.equal(a.original_host, original_host);
+    }
 }
 
 describe('good addresses pass', function () {
@@ -46,7 +49,7 @@ describe('good addresses pass', function () {
     });
 
     it('<андрис@уайлддак.орг>', function () {
-        _check('<андрис@уайлддак.орг>', 'андрис', 'уайлддак.орг');
+        _check('<андрис@уайлддак.орг>', 'андрис', 'xn--80aalaxjd5d.xn--c1avg', 'уайлддак.орг');
     });
 });
 

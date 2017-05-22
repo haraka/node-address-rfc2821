@@ -56,7 +56,11 @@ Access the local part of the email address
 
 * address.host
 
-Access the domain part of the email adress
+Access the domain part of the email adress, decoded if necessary to punycode
+
+* address.original_host
+
+Access the domain part of the email address, unencoded and case preserved
 
 * address.format()
 

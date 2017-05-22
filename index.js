@@ -1,7 +1,10 @@
 'use strict';
+
+var punycode = require('punycode');
+
 // a class encapsulating an email address per RFC-2821
 
-var qchar = /([^a-zA-Z0-9!#\$\%\&\x27\*\+\x2D\/=\?\^_`{\|}~.])/;
+var qchar = /([^a-zA-Z0-9!#\$\%\&\x27\*\+\x2D\/=\?\^_`{\|}~.\u0100-\uFFFF])/;
 
 function Address (user, host) {
     if (typeof user === 'object' && user.original) {
@@ -99,19 +102,23 @@ Address.prototype.parse = function (addr) {
 
     var localpart  = matches[1];
     var domainpart = matches[2];
+    this.original_host = domainpart;
+
+    if (/[\u0100-\uFFFF]/.test(domainpart)) {
+        domainpart = punycode.toASCII(domainpart);
+    }
+
+    this.host = domainpart.toLowerCase();
 
     if (atoms_re.test(localpart)) {
         // simple case, we are done
         this.user = localpart;
-        // original case can be found in address.original
-        this.host = domainpart.toLowerCase();
         return;
     }
     matches = qt_re.exec(localpart);
     if (matches) {
         localpart = matches[1];
         this.user = localpart.replace(exports.text_expr, '$1', 'g');
-        this.host = domainpart.toLowerCase();
         return;
     }
     throw new Error('Invalid local part in address: ' + addr);
@@ -128,7 +135,7 @@ Address.prototype.format = function () {
 
     var user = this.user.replace(qchar, '\\$1', 'g');
     if (user !== this.user) {
-        return '<"' + user + '"' + (this.host ? ('@' + this.host) : '') + '>';
+        return '<"' + user + '"' + (this.original_host ? ('@' + this.original_host) : '') + '>';
     }
     return '<' + this.address() + '>';
 };
@@ -138,7 +145,7 @@ Address.prototype.address = function (set) {
         this.original = set;
         this.parse(set);
     }
-    return (this.user || '') + (this.host ? ('@' + this.host) : '');
+    return (this.user || '') + (this.original_host ? ('@' + this.original_host) : '');
 };
 
 Address.prototype.toString = function () {
