@@ -27,15 +27,18 @@ function Address (user, host) {
     }
 }
 
-exports.atom_expr = /[a-zA-Z0-9!#%&*+=?\^_`{|}~\$\x27\x2D\/]+/;
+var idn_allowed = require('./_idn');
+
+exports.atom_expr = /[a-zA-Z0-9!#%&*+=?\^_`{|}~\$\x27\x2D\/\u0100-\uFFFF]+/;
 exports.address_literal_expr =
   /(?:\[(?:\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|IPv6:[0-9A-Fa-f:.]+)\])/;
-exports.subdomain_expr = /(?:[a-zA-Z0-9](?:[_\-a-zA-Z0-9]*[a-zA-Z0-9])?)/;
+// exports.subdomain_expr = /(?:[a-zA-Z0-9](?:[_\-a-zA-Z0-9]*[a-zA-Z0-9])?)/;
+exports.subdomain_expr = new RegExp('(?:' + idn_allowed.source + '(?:(?:[_\-]|' + idn_allowed.source + ')*' + idn_allowed.source + ')?)');
 
 // you can override this when loading and re-run compile_re()
 exports.domain_expr = undefined;
 
-exports.qtext_expr = /[\x01-\x08\x0B\x0C\x0E-\x1F\x21\x23-\x5B\x5D-\x7F]/;
+exports.qtext_expr = /[\x01-\x08\x0B\x0C\x0E-\x1F\x21\x23-\x5B\x5D-\x7F\u0100-\uFFFF]/;
 exports.text_expr  = /\\([\x01-\x09\x0B\x0C\x0E-\x7F])/;
 
 var domain_re;

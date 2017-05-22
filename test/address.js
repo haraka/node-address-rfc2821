@@ -44,6 +44,10 @@ describe('good addresses pass', function () {
     it('foo@foo.x.example.com', function () {
         _check('foo@foo.x.example.com', 'foo', 'foo.x.example.com');
     });
+
+    it('<андрис@уайлддак.орг>', function () {
+        _check('<андрис@уайлддак.орг>', 'андрис', 'уайлддак.орг');
+    });
 });
 
 describe('bad addresses fail', function () {
