@@ -34,5 +34,8 @@
     "grunt-mocha-test": "*",
     "mocha": "*"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "punycode": "^2.1.0"
+  }
 }
