@@ -36,8 +36,10 @@ Usage
 # Address Object
 
 The Address object is an interface to reading email addresses passed in at
-SMTP time. It parses all the formats in RFC-2821 and 2822, and
-supports correctly escaping email addresses.
+SMTP time. It parses all the formats in RFC-2821 and 2822, as well as UTF8
+email addresses according to the RFCs 5890, 5891 and 5892 providing the
+domain in punycode when encountered It also supports correctly escaping
+email addresses.
 
 ## API
 
