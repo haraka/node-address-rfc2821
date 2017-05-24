@@ -105,6 +105,7 @@ Address.prototype.parse = function (addr) {
     this.original_host = domainpart;
 
     if (/[\u0100-\uFFFF]/.test(domainpart)) {
+        this.is_utf8 = true;
         domainpart = punycode.toASCII(domainpart);
     }
 
@@ -128,24 +129,24 @@ Address.prototype.isNull = function () {
     return this.user ? 0 : 1;
 };
 
-Address.prototype.format = function () {
+Address.prototype.format = function (use_punycode) {
     if (this.isNull()) {
         return '<>';
     }
 
     var user = this.user.replace(qchar, '\\$1', 'g');
     if (user !== this.user) {
-        return '<"' + user + '"' + (this.original_host ? ('@' + this.original_host) : '') + '>';
+        return '<"' + user + '"' + (this.original_host ? ('@' + (use_punycode ? this.host : this.original_host)) : '') + '>';
     }
-    return '<' + this.address() + '>';
+    return '<' + this.address(null, use_punycode) + '>';
 };
 
-Address.prototype.address = function (set) {
+Address.prototype.address = function (set, use_punycode) {
     if (set) {
         this.original = set;
         this.parse(set);
     }
-    return (this.user || '') + (this.original_host ? ('@' + this.original_host) : '');
+    return (this.user || '') + (this.original_host ? ('@' + (use_punycode ? this.host : this.original_host)) : '');
 };
 
 Address.prototype.toString = function () {

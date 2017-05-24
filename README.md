@@ -64,18 +64,22 @@ Access the domain part of the email address, decoded if necessary to punycode
 
 Access the domain part of the email address, unencoded and case preserved
 
-* address.format()
+* address.format(use_punycode=false)
 
 Provides the email address in the appropriate `<user@host>` format. And
 deals correctly with the null sender and local names.
+
+If use_punycode = true, uses address.host instead of address.original_host.
 
 * address.toString()
 
 Same as format().
 
-* address.address()
+* address.address(newval=null, use_punycode=false)
 
 Provides the email address in 'user@host' format.
+
+If use_punycode = true, uses address.host instead of address.original_host.
 
 Advanced Usage
 --------------
