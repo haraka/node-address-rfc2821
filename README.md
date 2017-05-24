@@ -58,7 +58,7 @@ Access the local part of the email address
 
 * address.host
 
-Access the domain part of the email adress, decoded if necessary to punycode
+Access the domain part of the email address, decoded if necessary to punycode
 
 * address.original_host
 
