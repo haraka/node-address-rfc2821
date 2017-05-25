@@ -36,8 +36,10 @@ Usage
 # Address Object
 
 The Address object is an interface to reading email addresses passed in at
-SMTP time. It parses all the formats in RFC-2821 and 2822, and
-supports correctly escaping email addresses.
+SMTP time. It parses all the formats in RFC-2821 and 2822, as well as UTF8
+email addresses according to the RFCs 5890, 5891 and 5892 providing the
+domain in punycode when encountered It also supports correctly escaping
+email addresses.
 
 ## API
 
@@ -56,20 +58,28 @@ Access the local part of the email address
 
 * address.host
 
-Access the domain part of the email adress
+Access the domain part of the email address, decoded if necessary to punycode
 
-* address.format()
+* address.original_host
+
+Access the domain part of the email address, unencoded and case preserved
+
+* address.format(use_punycode=false)
 
 Provides the email address in the appropriate `<user@host>` format. And
 deals correctly with the null sender and local names.
+
+If use_punycode = true, uses address.host instead of address.original_host.
 
 * address.toString()
 
 Same as format().
 
-* address.address()
+* address.address(newval=null, use_punycode=false)
 
 Provides the email address in 'user@host' format.
+
+If use_punycode = true, uses address.host instead of address.original_host.
 
 Advanced Usage
 --------------

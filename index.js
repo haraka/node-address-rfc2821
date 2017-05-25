@@ -1,7 +1,10 @@
 'use strict';
+
+var punycode = require('punycode');
+
 // a class encapsulating an email address per RFC-2821
 
-var qchar = /([^a-zA-Z0-9!#\$\%\&\x27\*\+\x2D\/=\?\^_`{\|}~.])/;
+var qchar = /([^a-zA-Z0-9!#\$\%\&\x27\*\+\x2D\/=\?\^_`{\|}~.\u0100-\uFFFF])/;
 
 function Address (user, host) {
     if (typeof user === 'object' && user.original) {
@@ -27,15 +30,18 @@ function Address (user, host) {
     }
 }
 
-exports.atom_expr = /[a-zA-Z0-9!#%&*+=?\^_`{|}~\$\x27\x2D\/]+/;
+var idn_allowed = require('./_idn');
+
+exports.atom_expr = /[a-zA-Z0-9!#%&*+=?\^_`{|}~\$\x27\x2D\/\u0100-\uFFFF]+/;
 exports.address_literal_expr =
   /(?:\[(?:\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|IPv6:[0-9A-Fa-f:.]+)\])/;
-exports.subdomain_expr = /(?:[a-zA-Z0-9](?:[_\-a-zA-Z0-9]*[a-zA-Z0-9])?)/;
+// exports.subdomain_expr = /(?:[a-zA-Z0-9](?:[_\-a-zA-Z0-9]*[a-zA-Z0-9])?)/;
+exports.subdomain_expr = new RegExp('(?:' + idn_allowed.source + '(?:(?:[_\-]|' + idn_allowed.source + ')*' + idn_allowed.source + ')?)');
 
 // you can override this when loading and re-run compile_re()
 exports.domain_expr = undefined;
 
-exports.qtext_expr = /[\x01-\x08\x0B\x0C\x0E-\x1F\x21\x23-\x5B\x5D-\x7F]/;
+exports.qtext_expr = /[\x01-\x08\x0B\x0C\x0E-\x1F\x21\x23-\x5B\x5D-\x7F\u0100-\uFFFF]/;
 exports.text_expr  = /\\([\x01-\x09\x0B\x0C\x0E-\x7F])/;
 
 var domain_re;
@@ -96,19 +102,24 @@ Address.prototype.parse = function (addr) {
 
     var localpart  = matches[1];
     var domainpart = matches[2];
+    this.original_host = domainpart;
+
+    if (/[\u0100-\uFFFF]/.test(domainpart)) {
+        this.is_utf8 = true;
+        domainpart = punycode.toASCII(domainpart);
+    }
+
+    this.host = domainpart.toLowerCase();
 
     if (atoms_re.test(localpart)) {
         // simple case, we are done
         this.user = localpart;
-        // original case can be found in address.original
-        this.host = domainpart.toLowerCase();
         return;
     }
     matches = qt_re.exec(localpart);
     if (matches) {
         localpart = matches[1];
         this.user = localpart.replace(exports.text_expr, '$1', 'g');
-        this.host = domainpart.toLowerCase();
         return;
     }
     throw new Error('Invalid local part in address: ' + addr);
@@ -118,24 +129,24 @@ Address.prototype.isNull = function () {
     return this.user ? 0 : 1;
 };
 
-Address.prototype.format = function () {
+Address.prototype.format = function (use_punycode) {
     if (this.isNull()) {
         return '<>';
     }
 
     var user = this.user.replace(qchar, '\\$1', 'g');
     if (user !== this.user) {
-        return '<"' + user + '"' + (this.host ? ('@' + this.host) : '') + '>';
+        return '<"' + user + '"' + (this.original_host ? ('@' + (use_punycode ? this.host : this.original_host)) : '') + '>';
     }
-    return '<' + this.address() + '>';
+    return '<' + this.address(null, use_punycode) + '>';
 };
 
-Address.prototype.address = function (set) {
+Address.prototype.address = function (set, use_punycode) {
     if (set) {
         this.original = set;
         this.parse(set);
     }
-    return (this.user || '') + (this.host ? ('@' + this.host) : '');
+    return (this.user || '') + (this.original_host ? ('@' + (use_punycode ? this.host : this.original_host)) : '');
 };
 
 Address.prototype.toString = function () {

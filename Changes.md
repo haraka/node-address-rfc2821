@@ -1,3 +1,5 @@
+- 1.1.0
+  - support IDN email addresses
 
 - 1.0.0 - 2016-12-08
 
