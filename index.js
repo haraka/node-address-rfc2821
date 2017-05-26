@@ -41,6 +41,7 @@ exports.subdomain_expr = new RegExp('(?:' + idn_allowed.source + '(?:(?:[_\-]|' 
 // you can override this when loading and re-run compile_re()
 exports.domain_expr = undefined;
 
+/* eslint no-control-regex: 0 */
 exports.qtext_expr = /[\x01-\x08\x0B\x0C\x0E-\x1F\x21\x23-\x5B\x5D-\x7F\u0100-\uFFFF]/;
 exports.text_expr  = /\\([\x01-\x09\x0B\x0C\x0E-\x7F])/;
 
