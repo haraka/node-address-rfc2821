@@ -113,5 +113,5 @@ This module is MIT licensed.
 [dep-url]: https://david-dm.org/haraka/node-address-rfc2821
 [cov-img]: https://codecov.io/github/haraka/node-address-rfc2821/coverage.svg?branch=master
 [cov-url]: https://codecov.io/github/haraka/node-address-rfc2821?branch=master
-[win-ci-img]: https://ci.appveyor.com/api/projects/status/ai1jt6yrphrehpg9?svg=true
-[win-ci-url]: https://ci.appveyor.com/project/msimerson/node-address-rfc2821-1wf12/branch/master
+[win-ci-img]: https://ci.appveyor.com/api/projects/status/rwk0n1mu0124chdb?svg=true
+[win-ci-url]: https://ci.appveyor.com/project/msimerson/node-address-rfc2821/branch/master

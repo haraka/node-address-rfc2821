@@ -21,6 +21,7 @@
     "url": "https://github.com/haraka/node-address-rfc2821/issues"
   },
   "scripts": {
+    "lint": "eslint *.js",
     "test": "./node_modules/.bin/mocha"
   },
   "repository": {
@@ -28,10 +29,8 @@
     "url": "https://github.com/haraka/node-address-rfc2821.git"
   },
   "devDependencies": {
-    "grunt": "*",
-    "grunt-eslint": "*",
-    "grunt-contrib-clean": "*",
-    "grunt-mocha-test": "*",
+    "eslint": "^3.19.0",
+    "eslint-plugin-haraka": "^1.0.5",
     "mocha": "*"
   },
   "license": "MIT",
