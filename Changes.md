@@ -1,3 +1,6 @@
+- 1.1.1
+  - Fix a bug when using the constructor to generate an address
+
 - 1.1.0
   - support IDN email addresses
 

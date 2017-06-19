@@ -26,8 +26,16 @@ function Address (user, host) {
     else {
         this.original = user + '@' + host;
         this.user = user;
+        this.original_host = host;
+
+        if (/[\u0100-\uFFFF]/.test(host)) {
+            this.is_utf8 = true;
+            host = punycode.toASCII(host);
+        }
+
         this.host = host;
     }
+
 }
 
 var idn_allowed = require('./_idn');
