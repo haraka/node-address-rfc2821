@@ -28,6 +28,7 @@ function Address (user, host) {
         this.user = user;
         this.host = host;
     }
+    this.original_host = this.host;
 }
 
 var idn_allowed = require('./_idn');
