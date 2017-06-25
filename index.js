@@ -61,9 +61,9 @@ var qt_re;
 
 exports.compile_re = function () {
     domain_re = exports.domain_expr || new RegExp (
-            exports.subdomain_expr.source +
+        exports.subdomain_expr.source +
             '(?:\\.' + exports.subdomain_expr.source + ')*'
-            );
+    );
 
     if (!exports.domain_expr && exports.address_literal_expr) {
         // if address_literal_expr is set, add it in
