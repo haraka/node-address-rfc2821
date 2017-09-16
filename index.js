@@ -4,7 +4,7 @@ const punycode = require('punycode');
 
 // a class encapsulating an email address per RFC-2821
 
-const qchar = /([^a-zA-Z0-9!#\$\%\&\x27\*\+\x2D\/=\?\^_`{\|}~.\u0100-\uFFFF])/;
+const qchar = /([^a-zA-Z0-9!#$%&\x27*+\x2D/=?^_`{|}~.\u0100-\uFFFF])/;
 
 function Address (user, host) {
     if (typeof user === 'object' && user.original) {
@@ -40,11 +40,11 @@ function Address (user, host) {
 
 const idn_allowed = require('./_idn');
 
-exports.atom_expr = /[a-zA-Z0-9!#%&*+=?\^_`{|}~\$\x27\x2D\/\u0100-\uFFFF]+/;
+exports.atom_expr = /[a-zA-Z0-9!#%&*+=?^_`{|}~$\x27\x2D/\u0100-\uFFFF]+/;
 exports.address_literal_expr =
   /(?:\[(?:\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|IPv6:[0-9A-Fa-f:.]+)\])/;
 // exports.subdomain_expr = /(?:[a-zA-Z0-9](?:[_\-a-zA-Z0-9]*[a-zA-Z0-9])?)/;
-exports.subdomain_expr = new RegExp('(?:' + idn_allowed.source + '(?:(?:[_\-]|' + idn_allowed.source + ')*' + idn_allowed.source + ')?)');
+exports.subdomain_expr = new RegExp('(?:' + idn_allowed.source + '(?:(?:[_-]|' + idn_allowed.source + ')*' + idn_allowed.source + ')?)');
 
 // you can override this when loading and re-run compile_re()
 exports.domain_expr = undefined;
