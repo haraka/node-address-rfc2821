@@ -1,20 +1,20 @@
 'use strict';
 
-var punycode = require('punycode');
+const punycode = require('punycode');
 
 // a class encapsulating an email address per RFC-2821
 
-var qchar = /([^a-zA-Z0-9!#\$\%\&\x27\*\+\x2D\/=\?\^_`{\|}~.\u0100-\uFFFF])/;
+const qchar = /([^a-zA-Z0-9!#\$\%\&\x27\*\+\x2D\/=\?\^_`{\|}~.\u0100-\uFFFF])/;
 
 function Address (user, host) {
     if (typeof user === 'object' && user.original) {
         // Assume constructing from JSON parse
-        for (var k in user) {
+        for (const k in user) {
             this[k] = user[k];
         }
         return this;
     }
-    var match = /^<(.*)>$/.exec(user);
+    const match = /^<(.*)>$/.exec(user);
     if (match) {
         this.original = user;
         this.parse(match[1]);
@@ -38,7 +38,7 @@ function Address (user, host) {
 
 }
 
-var idn_allowed = require('./_idn');
+const idn_allowed = require('./_idn');
 
 exports.atom_expr = /[a-zA-Z0-9!#%&*+=?\^_`{|}~\$\x27\x2D\/\u0100-\uFFFF]+/;
 exports.address_literal_expr =
@@ -53,11 +53,11 @@ exports.domain_expr = undefined;
 exports.qtext_expr = /[\x01-\x08\x0B\x0C\x0E-\x1F\x21\x23-\x5B\x5D-\x7F\u0100-\uFFFF]/;
 exports.text_expr  = /\\([\x01-\x09\x0B\x0C\x0E-\x7F])/;
 
-var domain_re;
-var source_route_re;
-var user_host_re;
-var atoms_re;
-var qt_re;
+let domain_re;
+let source_route_re;
+let user_host_re;
+let atoms_re;
+let qt_re;
 
 exports.compile_re = function () {
     domain_re = exports.domain_expr || new RegExp (
@@ -103,14 +103,14 @@ Address.prototype.parse = function (addr) {
         return;
     }
 
-    var matches = user_host_re.exec(addr);
+    let matches = user_host_re.exec(addr);
 
     if (!matches) {
         throw new Error('Invalid domain in address: ' + addr);
     }
 
-    var localpart  = matches[1];
-    var domainpart = matches[2];
+    let localpart  = matches[1];
+    let domainpart = matches[2];
     this.original_host = domainpart;
 
     if (/[\u0100-\uFFFF]/.test(domainpart)) {
@@ -143,7 +143,7 @@ Address.prototype.format = function (use_punycode) {
         return '<>';
     }
 
-    var user = this.user.replace(qchar, '\\$1', 'g');
+    const user = this.user.replace(qchar, '\\$1', 'g');
     if (user !== this.user) {
         return '<"' + user + '"' + (this.original_host ? ('@' + (use_punycode ? this.host : this.original_host)) : '') + '>';
     }
