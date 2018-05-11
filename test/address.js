@@ -101,4 +101,17 @@ describe('format()', function () {
         assert.equal(addr.host, 'example.com');
         done();
     });
+    
+    it('no latin escaping', function (done) {
+        var addr = new Address('<přílišžluťoučkýkůň@přílišžluťoučkýkůň.cz>');
+        assert.equal(addr.format(), '<přílišžluťoučkýkůň@přílišžluťoučkýkůň.cz>');
+        done();
+    });
+
+    it('multiple escaped chars', function (done) {
+        var addr = new Address('<pří lišžlu ťoučkýkůň@přílišžluťoučkýkůň.cz>');
+        assert.equal(addr.format(), '<"pří\\ lišžlu\\ ťoučkýkůň"@přílišžluťoučkýkůň.cz>');
+        done();
+    });
+
 });
