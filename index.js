@@ -4,7 +4,7 @@ const punycode = require('punycode');
 
 // a class encapsulating an email address per RFC-2821
 
-const qchar = /([^a-zA-Z0-9!#$%&\x27*+\x2D/=?^_`{|}~.\u00C0-\uFFFF])/;
+const qchar = /([^a-zA-Z0-9!#$%&\x27*+\x2D/=?^_`{|}~.\u00C0-\uFFFF])/g;
 
 function Address (user, host) {
     if (typeof user === 'object' && user.original) {
@@ -51,7 +51,7 @@ exports.domain_expr = undefined;
 
 /* eslint no-control-regex: 0 */
 exports.qtext_expr = /[\x01-\x08\x0B\x0C\x0E-\x1F\x21\x23-\x5B\x5D-\x7F\u00C0-\uFFFF]/;
-exports.text_expr  = /\\([\x01-\x09\x0B\x0C\x0E-\x7F])/;
+exports.text_expr  = /\\([\x01-\x09\x0B\x0C\x0E-\x7F])/g;
 
 let domain_re;
 let source_route_re;
@@ -128,7 +128,7 @@ Address.prototype.parse = function (addr) {
     matches = qt_re.exec(localpart);
     if (matches) {
         localpart = matches[1];
-        this.user = localpart.replace(exports.text_expr, '$1', 'g');
+        this.user = localpart.replace(exports.text_expr, '$1');
         return;
     }
     throw new Error('Invalid local part in address: ' + addr);
@@ -143,7 +143,7 @@ Address.prototype.format = function (use_punycode) {
         return '<>';
     }
 
-    const user = this.user.replace(qchar, '\\$1', 'g');
+    const user = this.user.replace(qchar, '\\$1');
     if (user !== this.user) {
         return '<"' + user + '"' + (this.original_host ? ('@' + (use_punycode ? this.host : this.original_host)) : '') + '>';
     }
