@@ -27,6 +27,10 @@ describe('good addresses pass', function () {
         _check('<foo@example.com>', 'foo', 'example.com');
     });
 
+    it('<$foo@example.com>', function () {
+        _check('<$foo@example.com>', '$foo', 'example.com');
+    });
+
     it('<"musa_ibrah@caramail.comandrea.luger"@wifo.ac.at>', function () {
         _check('<"musa_ibrah@caramail.comandrea.luger"@wifo.ac.at>',
             'musa_ibrah@caramail.comandrea.luger', 'wifo.ac.at');
@@ -52,6 +56,32 @@ describe('good addresses pass', function () {
         _check('<андрис@уайлддак.орг>', 'андрис', 'xn--80aalaxjd5d.xn--c1avg', 'уайлддак.орг');
     });
 });
+
+describe('wikipedia examples: https://en.wikipedia.org/wiki/Email_address#Internationalization_examples', function () {
+    it('<Pelé@example.com>', function () {
+        _check('<Pelé@example.com>', 'Pelé', 'example.com');
+    });
+
+    it('<δοκιμή@παράδειγμα.δοκιμή>', function () {
+        _check('<δοκιμή@παράδειγμα.δοκιμή>', 'δοκιμή', 'xn--hxajbheg2az3al.xn--jxalpdlp', 'παράδειγμα.δοκιμή');
+    });
+
+    it('<我買@屋企.香港>', function () {
+        _check('<我買@屋企.香港>', '我買', 'xn--hoqu73a.xn--j6w193g', '屋企.香港');
+    });
+
+    it('<二ノ宮@黒川.日本>', function () {
+        _check('<二ノ宮@黒川.日本>', '二ノ宮', 'xn--5rtw95l.xn--wgv71a', '黒川.日本');
+    });
+
+    it('<медведь@с-балалайкой.рф>', function () {
+        _check('<медведь@с-балалайкой.рф>', 'медведь', 'xn----8sbaac5cahfb0b0a.xn--p1ai', 'с-балалайкой.рф');
+    });
+
+    it('<संपर्क@डाटामेल.भारत>', function () {
+        _check('<संपर्क@डाटामेल.भारत>', 'संपर्क', 'xn--c2bd4bq1db8d.xn--h2brj9c', 'डाटामेल.भारत');
+    });
+})
 
 describe('bad addresses fail', function () {
 
