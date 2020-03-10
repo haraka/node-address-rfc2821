@@ -2,7 +2,7 @@
 [![Dependencies][dep-img]][dep-url]
 [![Coverage Status][cov-img]][cov-url]
 [![WinCI status][win-ci-img]][win-ci-url]
-[![Greenkeeper badge](https://badges.greenkeeper.io/haraka/node-address-rfc2821.svg)](https://greenkeeper.io/)
+
 
 # address-rfc2821
 
