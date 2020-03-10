@@ -131,7 +131,7 @@ describe('format()', function () {
         assert.equal(addr.host, 'example.com');
         done();
     });
-    
+
     it('no latin escaping', function (done) {
         var addr = new Address('<přílišžluťoučkýkůň@přílišžluťoučkýkůň.cz>');
         assert.equal(addr.format(), '<přílišžluťoučkýkůň@přílišžluťoučkýkůň.cz>');
