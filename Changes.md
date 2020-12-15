@@ -1,5 +1,5 @@
 
-### 1.1.3 - 2020-12-14
+### 1.1.4 - 2020-12-14
 
 - packaging updates
 - replace Travis CI & AppVeyor for GH Actions

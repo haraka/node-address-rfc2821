@@ -89,7 +89,7 @@ for stricter or less strict matching.
 
 To change the behaviour mess with the following variables:
 
-    var adr = require('address-rfc2821');
+    const adr = require('address-rfc2821');
     // Now change one of the following. Note they are RegExp objects NOT strings.
     adr.atom_expr;
     adr.address_literal_expr;
@@ -107,11 +107,11 @@ License
 This module is MIT licensed.
 
 
-[ci-img]: https://travis-ci.org/haraka/node-address-rfc2821.svg?branch=master
-[ci-url]: https://travis-ci.org/haraka/node-address-rfc2821
+[ci-img]: https://github.com/haraka/node-address-rfc2821/workflows/Test%20Coverage/badge.svg
+[ci-url]: https://github.com/haraka/node-address-rfc2821/actions?query=workflow%3A%22Test+Coverage%22
 [dep-img]: https://david-dm.org/haraka/node-address-rfc2821.svg
 [dep-url]: https://david-dm.org/haraka/node-address-rfc2821
 [cov-img]: https://codecov.io/github/haraka/node-address-rfc2821/coverage.svg?branch=master
 [cov-url]: https://codecov.io/github/haraka/node-address-rfc2821?branch=master
-[win-ci-img]: https://ci.appveyor.com/api/projects/status/rwk0n1mu0124chdb?svg=true
-[win-ci-url]: https://ci.appveyor.com/project/msimerson/node-address-rfc2821/branch/master
+[win-ci-img]: https://github.com/haraka/node-address-rfc2821/workflows/Plugin%20Tests%20-%20Windows/badge.svg
+[win-ci-url]: https://github.com/haraka/node-address-rfc2821/actions?query=workflow%3A%22Plugin+Tests+-+Windows%22
