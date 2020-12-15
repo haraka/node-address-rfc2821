@@ -132,11 +132,11 @@ Address.prototype.parse = function (addr) {
         return;
     }
     throw new Error('Invalid local part in address: ' + addr);
-};
+}
 
 Address.prototype.isNull = function () {
     return this.user ? 0 : 1;
-};
+}
 
 Address.prototype.format = function (use_punycode) {
     if (this.isNull()) {
@@ -148,7 +148,7 @@ Address.prototype.format = function (use_punycode) {
         return '<"' + user + '"' + (this.original_host ? ('@' + (use_punycode ? this.host : this.original_host)) : '') + '>';
     }
     return '<' + this.address(null, use_punycode) + '>';
-};
+}
 
 Address.prototype.address = function (set, use_punycode) {
     if (set) {
@@ -156,10 +156,10 @@ Address.prototype.address = function (set, use_punycode) {
         this.parse(set);
     }
     return (this.user || '') + (this.original_host ? ('@' + (use_punycode ? this.host : this.original_host)) : '');
-};
+}
 
 Address.prototype.toString = function () {
     return this.format();
-};
+}
 
 exports.Address = Address;
