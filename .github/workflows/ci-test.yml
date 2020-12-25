@@ -28,6 +28,9 @@ jobs:
     - name: npm install
       run: npm install
 
+    - name: Compile grammar
+      run: npm run grammar
+
     - name: Run test suite
       run: npm run test
 
