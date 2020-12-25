@@ -24,6 +24,7 @@ jobs:
       run: |
         npm install
         npm install --no-save nyc codecov
+        npm run grammar
         npm run cover
 
     - name: Coveralls
