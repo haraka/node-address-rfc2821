@@ -3,7 +3,7 @@
 
 - Replace regular expression based parser with parser based on
   <https://nearley.js.org/>
-- Double quote charachters are not stripped from the local-part of the address if present.
+- Double quote characters are not stripped from the local-part of the address if present.
 - No added escaping is attempted inside quoted-strings
 
 
