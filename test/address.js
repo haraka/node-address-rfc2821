@@ -14,7 +14,6 @@ function _check (address, user, host, original_host) {
 }
 
 describe('good addresses pass', function () {
-
     it('<>', function () {
         _check('<>', '', '');
     })
@@ -33,11 +32,7 @@ describe('good addresses pass', function () {
 
     it('<"musa_ibrah@caramail.comandrea.luger"@wifo.ac.at>', function () {
         _check('<"musa_ibrah@caramail.comandrea.luger"@wifo.ac.at>',
-            'musa_ibrah@caramail.comandrea.luger', 'wifo.ac.at');
-    })
-
-    it('<foo bar@example.com>', function () {
-        _check('<foo bar@example.com>', 'foo bar', 'example.com');
+            '"musa_ibrah@caramail.comandrea.luger"', 'wifo.ac.at');
     })
 
     it('foo@example.com', function () {
@@ -84,7 +79,6 @@ describe('wikipedia examples: https://en.wikipedia.org/wiki/Email_address#Intern
 })
 
 describe('bad addresses fail', function () {
-
     it('<user@example.com#>', function () {
         assert.throws(function () {
             new Address('<user@example.com#>');
@@ -96,14 +90,11 @@ describe('bad addresses fail', function () {
             new Address('<user@example.com.>');
         })
     })
-})
 
-describe('compile_re', function () {
-
-    it('compiles with no exceptions', function () {
-        const addr = require('../index');
-        addr.compile_re();
-        assert.ok(addr);
+    it('<foo bar@example.com>', function () {
+        assert.throws(function () {
+            new Address('<foo bar@example.com>');
+        })
     })
 })
 
@@ -138,9 +129,9 @@ describe('format()', function () {
         done();
     })
 
-    it('multiple escaped chars', function (done) {
-        const addr = new Address('<pří lišžlu ťoučkýkůň@přílišžluťoučkýkůň.cz>');
-        assert.equal(addr.format(), '<"pří\\ lišžlu\\ ťoučkýkůň"@přílišžluťoučkýkůň.cz>');
+    it('spaces inside a quoted string', function (done) {
+        const addr = new Address('<"pří lišžlu ťoučkýkůň"@přílišžluťoučkýkůň.cz>');
+        assert.equal(addr.format(), '<"pří lišžlu ťoučkýkůň"@přílišžluťoučkýkůň.cz>');
         done();
     })
 })
