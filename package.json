@@ -27,6 +27,7 @@
     "cover": "NODE_ENV=cov npx nyc --reporter=lcovonly npm run test",
     "lint": "npx eslint *.js",
     "lintfix": "npx eslint --fix *.js",
+    "postinstall": "npx nearleyc <grammar.ne -o grammar.js",
     "test": "npx mocha"
   },
   "repository": {
