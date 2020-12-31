@@ -25,8 +25,8 @@
   "scripts": {
     "grammar": "npx nearleyc <grammar.ne -o grammar.js",
     "cover": "NODE_ENV=cov npx nyc --reporter=lcovonly npm run test",
-    "lint": "npx eslint *.js",
-    "lintfix": "npx eslint --fix *.js",
+    "lint": "npx eslint index.js test/*.js",
+    "lintfix": "npx eslint --fix index.js test/*.js",
     "postinstall": "npx nearleyc <grammar.ne -o grammar.js",
     "test": "npx mocha"
   },
