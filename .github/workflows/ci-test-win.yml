@@ -28,6 +28,7 @@ jobs:
     - name: npm install and test
       run: |
         npm install
+        npm run grammar
         npm run test
 
       env:

@@ -6,15 +6,19 @@
 
 # address-rfc2821
 
-Parser for RFC2821 (Envelope) format email addresses.
+Parser for RFC-821/RFC-2821/RFC-5321 (envelope) format email addresses (Mailbox and Path).
 
-This module parses RFC2821 email address from the SMTP envelope. These are the
-portions immediately following the SMTP verbs `MAIL FROM:` and `RCPT TO:`. RFC 2821 (and 5321) email addesses look like this:
+This module parses email addresses from the SMTP envelope. These are the
+portions immediately following the SMTP verbs `MAIL FROM:` and `RCPT TO:`. RFC-5321 email addesses look like this:
 
 ````
 <>             // null
-<from@sender.com>
-<to@sender.com>
+<Postmaster>
+<from@example.com>
+<to@example.com>
+<dot.atom.string@example.com>
+<"quoted string"@example.com>
+angle-brackets-optional@example.com
 ````
 
 To parse email addresses contained in the message headers (To: From: BCC, CC), look instead at an RFC 2822/5322 parser such as [address-rfc2822](https://www.npmjs.com/package/address-rfc2822) or [email-addresses](https://www.npmjs.com/package/email-addresses).
@@ -80,26 +84,6 @@ Same as format().
 Provides the email address in 'user@host' format.
 
 If use_punycode = true, uses address.host instead of address.original_host.
-
-Advanced Usage
---------------
-
-It is possible to mess with the regular expressions used to match addresses
-for stricter or less strict matching.
-
-To change the behaviour mess with the following variables:
-
-    const adr = require('address-rfc2821');
-    // Now change one of the following. Note they are RegExp objects NOT strings.
-    adr.atom_expr;
-    adr.address_literal_expr;
-    adr.subdomain_expr;
-    adr.domain_expr;
-    adr.qtext_expr;
-    adr.text_expr;
-    // Don't forget to recompile:
-    adr.compile_re();
-
 
 License
 -------

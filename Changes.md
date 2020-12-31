@@ -1,4 +1,12 @@
 
+### 1.2.0 - 2020-12-25
+
+- Replace regular expression based parser with parser based on
+  <https://nearley.js.org/>
+- Double quote characters are not stripped from the local-part of the address if present.
+- No added escaping is attempted inside quoted-strings
+
+
 ### 1.1.4 - 2020-12-14
 
 - packaging updates
