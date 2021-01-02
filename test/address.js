@@ -26,6 +26,10 @@ describe('good addresses pass', function () {
         _check('<foo@example.com>', 'foo', 'example.com');
     })
 
+    it('<foo+bar@example.com>', function () {
+        _check('<foo+bar@example.com>', 'foo+bar', 'example.com');
+    })
+
     it('<$foo@example.com>', function () {
         _check('<$foo@example.com>', '$foo', 'example.com');
     })

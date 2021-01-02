@@ -69,7 +69,7 @@ Dot_string     -> Atom ("." Atom):*
 
 # 1*atext
 
-Atom           -> [0-9A-Za-z!#$%&'*\-/=?^_`{|}~\u0080-\uFFFF/]:+
+Atom           -> [0-9A-Za-z!#$%&'*+\-/=?^_`{|}~\u0080-\uFFFF/]:+
 
 Quoted_string  -> DQUOTE QcontentSMTP:* DQUOTE
 
