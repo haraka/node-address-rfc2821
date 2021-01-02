@@ -1,4 +1,8 @@
 
+### 1.2.1 - 2021-01-01
+
+- The '+' character was mistakenly missing from atext/atom definition
+
 ### 1.2.0 - 2020-12-25
 
 - Replace regular expression based parser with parser based on

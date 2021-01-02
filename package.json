@@ -1,6 +1,6 @@
 {
   "name": "address-rfc2821",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "RFC-5321 (Envelope) email address parser",
   "author": {
     "name": "The Haraka Team",
