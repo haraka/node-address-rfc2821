@@ -1,4 +1,9 @@
 
+### 2.0.0 - 2021-01-05
+
+- major version bump as nearly output requires node.js > 11
+
+
 ### 1.2.2 - 2021-01-05
 
 - package.json: remove spurious < character #37
