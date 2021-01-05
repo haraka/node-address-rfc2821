@@ -1,0 +1,15 @@
+.github
+logs
+*.log
+pids
+*.pid
+*.seed
+lib-cov
+coverage
+.grunt
+build/Release
+node_modules
+.lock-wscript
+package-lock.json
+grammar.js
+.eslintrc.yaml

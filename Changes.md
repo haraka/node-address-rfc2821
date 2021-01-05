@@ -2,11 +2,12 @@
 ### 1.2.1 - 2021-01-01
 
 - The '+' character was mistakenly missing from atext/atom definition
+- package.json: tell npx the nearlyc package name
+
 
 ### 1.2.0 - 2020-12-25
 
-- Replace regular expression based parser with parser based on
-  <https://nearley.js.org/>
+- Replace regular expression based parser with parser based on <https://nearley.js.org/>
 - Double quote characters are not stripped from the local-part of the address if present.
 - No added escaping is attempted inside quoted-strings
 
