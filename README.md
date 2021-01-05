@@ -32,9 +32,9 @@ Installation
 Usage
 -----
 
-    var Address = require('address-rfc2821').Address;
+    const Address = require('address-rfc2821').Address;
 
-    var parsed = new Address('<user@example.com>');
+    const parsed = new Address('<user@example.com>');
 
 
 # Address Object
