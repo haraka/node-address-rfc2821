@@ -4,6 +4,7 @@
 - major version bump, nearley output requires node.js > 11
 - package.json: declare dependency on node >= 12
 
+
 ### 1.2.3 - 2021-01-05
 
 - revert nearley version in 1.x line, incompatible with node < 11
