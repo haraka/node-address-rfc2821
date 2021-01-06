@@ -1,7 +1,12 @@
 
 ### 2.0.0 - 2021-01-05
 
-- major version bump as nearly output requires node.js > 11
+- major version bump, nearley output requires node.js > 11
+- package.json: declare dependency on node >= 12
+
+### 1.2.3 - 2021-01-05
+
+- revert nearley version in 1.x line, incompatible with node < 11
 
 
 ### 1.2.2 - 2021-01-05
