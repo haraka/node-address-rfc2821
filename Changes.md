@@ -1,4 +1,28 @@
 
+### 1.2.3 - 2021-01-05
+
+- revert nearley version in 1.x line, incompatible with node < 11
+
+
+### 1.2.2 - 2021-01-05
+
+- package.json: remove spurious < character #37
+- README: update for es6 syntax #36
+
+
+### 1.2.1 - 2021-01-01
+
+- The '+' character was mistakenly missing from atext/atom definition #31
+- package.json: tell npx the nearlyc package name #34
+
+
+### 1.2.0 - 2020-12-25
+
+- Replace regular expression based parser with parser based on <https://nearley.js.org/>
+- Double quote characters are not stripped from the local-part of the address if present.
+- No added escaping is attempted inside quoted-strings
+
+
 ### 1.1.4 - 2020-12-14
 
 - packaging updates
