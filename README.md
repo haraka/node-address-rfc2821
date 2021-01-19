@@ -1,7 +1,7 @@
 [![Build Status][ci-img]][ci-url]
+[![WinCI status][win-ci-img]][win-ci-url]
 [![Dependencies][dep-img]][dep-url]
 [![Coverage Status][cov-img]][cov-url]
-[![WinCI status][win-ci-img]][win-ci-url]
 
 
 # address-rfc2821
