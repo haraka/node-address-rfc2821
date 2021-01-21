@@ -1,6 +1,6 @@
 {
   "name": "address-rfc2821",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "RFC-5321 (Envelope) email address parser",
   "author": {
     "name": "The Haraka Team",
@@ -23,7 +23,7 @@
     "url": "https://github.com/haraka/node-address-rfc2821/issues"
   },
   "engines": {
-    "node": ">= v12.20.1"
+    "node": ">= 10.23.1"
   },
   "scripts": {
     "grammar": "npx -p nearley nearleyc grammar.ne -o grammar.js",

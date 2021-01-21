@@ -1,4 +1,11 @@
 
+### 2.0.1 - 2021-01-21
+
+- grammer.ne: add polyfill for Array.flat (#43)
+- restore compatibility with Node < 12
+- restore node 10 testing
+
+
 ### 2.0.0 - 2021-01-05
 
 - major version bump, nearley output requires node.js > 11
