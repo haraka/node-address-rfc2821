@@ -83,6 +83,12 @@ describe('wikipedia examples: https://en.wikipedia.org/wiki/Email_address#Intern
 })
 
 describe('bad addresses fail', function () {
+    it('foo@example.com+bob@attacker.com', function () {
+        assert.throws(function () {
+            new Address('foo@example.com+bob@attacker.com');
+        })
+    })
+
     it('<user@example.com#>', function () {
         assert.throws(function () {
             new Address('<user@example.com#>');
