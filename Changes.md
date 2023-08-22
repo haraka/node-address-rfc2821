@@ -1,4 +1,14 @@
 
+### Unreleased
+
+### 2.1.1 - 2023-08-22
+
+- feat: bundle grammar.js, build with prepack, fixes #46
+- ci: updated to latest
+- added .release
+- README: update badge URLs
+
+
 ### 2.0.1 - 2021-01-21
 
 - grammer.ne: add polyfill for Array.flat (#43)
@@ -66,3 +76,4 @@
 
 - replaced null host or user values with empty strings
 [2.1.0]: https://github.com/haraka/node-address-rfc2821/releases/tag/2.1.0
+[2.1.1]: https://github.com/haraka/node-address-rfc2821/releases/tag/2.1.1
