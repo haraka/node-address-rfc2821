@@ -1,6 +1,4 @@
 [![Build Status][ci-img]][ci-url]
-[![WinCI status][win-ci-img]][win-ci-url]
-[![Dependencies][dep-img]][dep-url]
 [![Coverage Status][cov-img]][cov-url]
 
 
@@ -8,8 +6,7 @@
 
 Parser for RFC-821/RFC-2821/RFC-5321 (envelope) format email addresses (Mailbox and Path).
 
-This module parses email addresses from the SMTP envelope. These are the
-portions immediately following the SMTP verbs `MAIL FROM:` and `RCPT TO:`. RFC-5321 email addesses look like this:
+This module parses email addresses from the SMTP envelope. These are the portions immediately following the SMTP verbs `MAIL FROM:` and `RCPT TO:`. RFC-5321 email addesses look like this:
 
 ````
 <>             // null
@@ -91,11 +88,7 @@ License
 This module is MIT licensed.
 
 
-[ci-img]: https://github.com/haraka/node-address-rfc2821/workflows/Test%20Coverage/badge.svg
-[ci-url]: https://github.com/haraka/node-address-rfc2821/actions?query=workflow%3A%22Test+Coverage%22
-[dep-img]: https://david-dm.org/haraka/node-address-rfc2821.svg
-[dep-url]: https://david-dm.org/haraka/node-address-rfc2821
+[ci-img]: https://github.com/haraka/node-address-rfc2821/actions/workflows/ci.yml/badge.svg
+[ci-url]: https://github.com/haraka/node-address-rfc2821/actions/workflows/ci.yml
 [cov-img]: https://codecov.io/github/haraka/node-address-rfc2821/coverage.svg?branch=master
 [cov-url]: https://codecov.io/github/haraka/node-address-rfc2821?branch=master
-[win-ci-img]: https://github.com/haraka/node-address-rfc2821/workflows/Plugin%20Tests%20-%20Windows/badge.svg
-[win-ci-url]: https://github.com/haraka/node-address-rfc2821/actions?query=workflow%3A%22Plugin+Tests+-+Windows%22
