@@ -11,5 +11,4 @@ build/Release
 node_modules
 .lock-wscript
 package-lock.json
-grammar.js
 .eslintrc.yaml
