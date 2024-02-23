@@ -1,6 +1,6 @@
 'use strict';
 
-const punycode = require('punycode');
+const punycode = require('punycode/');
 const nearley  = require('nearley');
 
 const grammar = nearley.Grammar.fromCompiled(require('./grammar.js'));

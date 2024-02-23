@@ -1,6 +1,14 @@
 
 ### Unreleased
 
+
+### [2.1.2] - 2024-02-23
+
+- load npm version of punycode (specify / after require)
+- dep(mocha): remove dev dep (installed by npx)
+- dep(punycode): bump 2.3.0 to 2.3.1
+
+
 ### 2.1.1 - 2023-08-22
 
 - feat: bundle grammar.js, build with prepack, fixes #46
@@ -77,3 +85,4 @@
 - replaced null host or user values with empty strings
 [2.1.0]: https://github.com/haraka/node-address-rfc2821/releases/tag/2.1.0
 [2.1.1]: https://github.com/haraka/node-address-rfc2821/releases/tag/2.1.1
+[2.1.2]: https://github.com/haraka/node-address-rfc2821/releases/tag/2.1.2
