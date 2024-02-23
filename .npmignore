@@ -12,3 +12,4 @@ node_modules
 .lock-wscript
 package-lock.json
 .eslintrc.yaml
+.gitmodules
