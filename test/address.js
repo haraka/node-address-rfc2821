@@ -1,6 +1,6 @@
 'use strict';
 
-const assert = require('assert');
+const assert = require('node:assert/strict');
 
 const Address = require('../index').Address;
 
@@ -119,29 +119,25 @@ describe('isNull', function () {
 })
 
 describe('format()', function () {
-    it('works', function (done) {
+    it('works', function () {
         const addr = new Address('<matt@example.com>');
         assert.equal(addr.user, 'matt');
         assert.equal(addr.host, 'example.com');
         assert.equal(addr.format(), '<matt@example.com>');
-        done();
     })
 
-    it('lower cases hostnames', function (done) {
+    it('lower cases hostnames', function () {
         const addr = new Address('<matt@exAMple.com>');
         assert.equal(addr.host, 'example.com');
-        done();
     })
 
-    it('no latin escaping', function (done) {
+    it('no latin escaping', function () {
         const addr = new Address('<přílišžluťoučkýkůň@přílišžluťoučkýkůň.cz>');
         assert.equal(addr.format(), '<přílišžluťoučkýkůň@přílišžluťoučkýkůň.cz>');
-        done();
     })
 
-    it('spaces inside a quoted string', function (done) {
+    it('spaces inside a quoted string', function () {
         const addr = new Address('<"pří lišžlu ťoučkýkůň"@přílišžluťoučkýkůň.cz>');
         assert.equal(addr.format(), '<"pří lišžlu ťoučkýkůň"@přílišžluťoučkýkůň.cz>');
-        done();
     })
 })
