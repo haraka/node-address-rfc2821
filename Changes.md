@@ -83,6 +83,7 @@
 ### 1.0.0 - 2016-12-08
 
 - replaced null host or user values with empty strings
+
 [2.1.0]: https://github.com/haraka/node-address-rfc2821/releases/tag/2.1.0
 [2.1.1]: https://github.com/haraka/node-address-rfc2821/releases/tag/2.1.1
 [2.1.2]: https://github.com/haraka/node-address-rfc2821/releases/tag/2.1.2
