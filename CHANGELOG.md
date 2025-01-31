@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 - doc: mv Changes.md CHANGELOG.md
 - doc(CONTRIBUTORS): added
 - doc(Changes): fix markdown formatting (#50)
+- style: prettier
 
 ### [2.1.2] - 2024-02-23
 
