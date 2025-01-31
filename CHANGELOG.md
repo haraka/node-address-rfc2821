@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 ### [2.1.3] - 2025-01-31
 
 - dep(eslint): upgrade to v9
+- doc: mv Changes.md CHANGELOG.md
 - doc(CONTRIBUTORS): added
 - doc(Changes): fix markdown formatting (#50)
 
