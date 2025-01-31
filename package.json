@@ -31,19 +31,26 @@
     "lintfix": "npx eslint --fix index.js test/*.js",
     "prepack": "npm run grammar",
     "test": "npx mocha",
-    "versions": "npx dependency-version-checker check"
+    "versions": "npx dependency-version-checker check",
+    "format": "npm run prettier:fix && npm run lint:fix",
+    "prettier": "npx prettier . --check",
+    "prettier:fix": "npx prettier . --write --log-level=warn",
+    "versions:fix": "npx dependency-version-checker update"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/haraka/node-address-rfc2821.git"
   },
   "devDependencies": {
-    "eslint": "8.56.0",
-    "eslint-plugin-haraka": "1.0.15"
+    "@haraka/eslint-config": "^2.0.2"
   },
   "license": "MIT",
   "dependencies": {
     "nearley": "^2.20.1",
     "punycode": "^2.3.1"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false
   }
 }

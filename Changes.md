@@ -1,20 +1,15 @@
+# Changelog
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/).
+
 
 ### Unreleased
 
 
 ### [2.1.3] - 2025-01-31
 
-#### Added
-
-- 
-
-#### Fixed
-
-- 
-
-#### Changed
-
-- 
+- dep(eslint): upgrade to v9
+- doc(CONTRIBUTORS): added
 - doc(Changes): fix markdown formatting (#50)
 
 
@@ -104,3 +99,5 @@
 [2.1.1]: https://github.com/haraka/node-address-rfc2821/releases/tag/2.1.1
 [2.1.2]: https://github.com/haraka/node-address-rfc2821/releases/tag/2.1.2
 [2.1.3]: https://github.com/haraka/node-address-rfc2821/releases/tag/2.1.3
+[1.1.4]: https://github.com/haraka/node-address-rfc2821/releases/tag/1.1.4
+[2.0.0]: https://github.com/haraka/node-address-rfc2821/releases/tag/2.0.0
