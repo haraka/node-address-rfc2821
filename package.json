@@ -30,7 +30,7 @@
     "lint": "npx eslint index.js test/*.js",
     "lint:fix": "npx eslint --fix index.js test/*.js",
     "prepack": "npm run grammar",
-    "test": "npx mocha",
+    "test": "npx mocha@^11",
     "versions": "npx dependency-version-checker check",
     "format": "npm run prettier:fix && npm run lint:fix",
     "prettier": "npx prettier . --check",
