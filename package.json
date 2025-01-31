@@ -28,7 +28,7 @@
   "scripts": {
     "grammar": "npx -p nearley nearleyc grammar.ne -o grammar.js",
     "lint": "npx eslint index.js test/*.js",
-    "lintfix": "npx eslint --fix index.js test/*.js",
+    "lint:fix": "npx eslint --fix index.js test/*.js",
     "prepack": "npm run grammar",
     "test": "npx mocha",
     "versions": "npx dependency-version-checker check",
