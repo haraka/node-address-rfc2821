@@ -5,7 +5,7 @@
 
 Parser for RFC-821/RFC-2821/RFC-5321 (envelope) format email addresses (Mailbox and Path).
 
-This module parses email addresses from the SMTP envelope. These are the portions immediately following the SMTP verbs `MAIL FROM:` and `RCPT TO:`. RFC-5321 email addesses look like this:
+This module parses email addresses from the SMTP envelope. These are the portions immediately following the SMTP verbs `MAIL FROM:` and `RCPT TO:`. RFC-5321 email addresses look like this:
 
 ```
 <>             // null
@@ -25,9 +25,11 @@ To parse email addresses contained in the message headers (To: From: BCC, CC), l
 
 ## Usage
 
-    const Address = require('address-rfc2821').Address;
+```js
+const Address = require('address-rfc2821').Address;
 
-    const parsed = new Address('<user@example.com>');
+const parsed = new Address('<user@example.com>');
+```
 
 # Address Object
 
