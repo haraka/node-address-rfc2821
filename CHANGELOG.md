@@ -4,6 +4,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
 ### Unreleased
 
+- added TypeScript type definitions
+
 ### [2.1.3] - 2025-01-31
 
 - dep(eslint): upgrade to v9
