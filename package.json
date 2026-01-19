@@ -29,7 +29,7 @@
     "url": "https://github.com/haraka/node-address-rfc2821/issues"
   },
   "engines": {
-    "node": ">= 10.23.1"
+    "node": ">= 20.20.0"
   },
   "scripts": {
     "grammar": "npx -p nearley nearleyc grammar.ne -o grammar.js",

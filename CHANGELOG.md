@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 - feat: add TypeScript type definitions #53
 - docs: enable syntax highlighting #52
 - chore: replace .npmignore with package.json[files]
+- dep: bump nodejs min version to 20
 
 ### [2.1.3] - 2025-01-31
 
