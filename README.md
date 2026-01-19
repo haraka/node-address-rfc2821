@@ -26,9 +26,9 @@ To parse email addresses contained in the message headers (To: From: BCC, CC), l
 ## Usage
 
 ```js
-const Address = require('address-rfc2821').Address;
+const Address = require('address-rfc2821').Address
 
-const parsed = new Address('<user@example.com>');
+const parsed = new Address('<user@example.com>')
 ```
 
 # Address Object

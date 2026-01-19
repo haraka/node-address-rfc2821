@@ -4,7 +4,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
 ### Unreleased
 
-- added TypeScript type definitions
+### [2.1.4] - 2026-01-18
+
+- feat: add TypeScript type definitions #53
+- docs: enable syntax highlighting #52
+- chore: replace .npmignore with package.json[files]
 
 ### [2.1.3] - 2025-01-31
 
@@ -83,9 +87,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
 - replaced null host or user values with empty strings
 
-[2.1.0]: https://github.com/haraka/node-address-rfc2821/releases/tag/2.1.0
-[2.1.1]: https://github.com/haraka/node-address-rfc2821/releases/tag/2.1.1
-[2.1.2]: https://github.com/haraka/node-address-rfc2821/releases/tag/2.1.2
-[2.1.3]: https://github.com/haraka/node-address-rfc2821/releases/tag/2.1.3
 [1.1.4]: https://github.com/haraka/node-address-rfc2821/releases/tag/1.1.4
 [2.0.0]: https://github.com/haraka/node-address-rfc2821/releases/tag/2.0.0
+[2.1.0]: https://github.com/haraka/node-address-rfc2821/releases/tag/v2.1.0
+[2.1.1]: https://github.com/haraka/node-address-rfc2821/releases/tag/v2.1.1
+[2.1.2]: https://github.com/haraka/node-address-rfc2821/releases/tag/v2.1.2
+[2.1.3]: https://github.com/haraka/node-address-rfc2821/releases/tag/v2.1.3
+[2.1.4]: https://github.com/haraka/node-address-rfc2821/releases/tag/v2.1.4

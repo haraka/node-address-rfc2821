@@ -7,6 +7,9 @@ on:
     paths:
       - package.json
 
+permissions:
+  id-token: write
+
 env:
   CI: true
 

@@ -1,11 +1,16 @@
 {
   "name": "address-rfc2821",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "description": "RFC-5321 (Envelope) email address parser",
   "author": {
     "name": "The Haraka Team",
     "url": "http://haraka.github.io"
   },
+  "files": [
+    "CHANGELOG.md",
+    "grammar.js",
+    "index.d.ts"
+  ],
   "main": "index.js",
   "types": "index.d.ts",
   "homepage": "https://github.com/haraka/node-address-rfc2821",
@@ -43,7 +48,7 @@
     "url": "https://github.com/haraka/node-address-rfc2821.git"
   },
   "devDependencies": {
-    "@haraka/eslint-config": "^2.0.2"
+    "@haraka/eslint-config": "^2.0.3"
   },
   "license": "MIT",
   "dependencies": {
