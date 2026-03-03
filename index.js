@@ -69,7 +69,7 @@ class Address {
     }
 
     isNull() {
-        return this.user ? 0 : 1
+        return !this.user
     }
 
     format(use_punycode) {
