@@ -1,6 +1,6 @@
 {
   "name": "address-rfc2821",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "description": "RFC-5321 (Envelope) email address parser",
   "author": {
     "name": "The Haraka Team",
@@ -36,7 +36,7 @@
     "lint": "npx eslint index.js test/*.js",
     "lint:fix": "npx eslint --fix index.js test/*.js",
     "prepack": "npm run grammar",
-    "test": "npx mocha@^11",
+    "test": "npx mocha",
     "versions": "npx dependency-version-checker check",
     "format": "npm run prettier:fix && npm run lint:fix",
     "prettier": "npx prettier . --check",
