@@ -21,15 +21,5 @@ export default [
         ...globals.mocha,
       },
     },
-
-    rules: {
-      indent: [
-        2,
-        4,
-        {
-          SwitchCase: 1,
-        },
-      ],
-    },
   },
 ]

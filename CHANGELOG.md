@@ -4,6 +4,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
 ### Unreleased
 
+### [2.2.0] - 2026-05-13
+
+- fix: update typescript definitions
+- fix: add error handling around parser.feed
+- fix: limit address lengths to prevent DOS surface
+- test: test runner & coverage is now node:test
+
 ### [2.1.5] - 2026-03-03
 
 - isNull() now returns a boolean (update a perlism)
@@ -100,3 +107,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 [2.1.3]: https://github.com/haraka/node-address-rfc2821/releases/tag/v2.1.3
 [2.1.4]: https://github.com/haraka/node-address-rfc2821/releases/tag/v2.1.4
 [2.1.5]: https://github.com/haraka/node-address-rfc2821/releases/tag/v2.1.5
+[2.2.0]: https://github.com/haraka/node-address-rfc2821/releases/tag/v2.2.0
